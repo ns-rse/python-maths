@@ -9,7 +9,7 @@ assignees: ""
 Use the checklist to tick off the sub-tasks as you complete them. Some of the tasks rely on material that has already
 been covered in the lesson so try and use what you have learnt. The commands are provided if required though.
 
-- [ ] Create the `zero-division-amend-fixup` branch.
+- [ ] Create the `<github_user>/<issue_number>-zero-division-amend-fixup` branch.
 - [ ] Rebase the branch onto `main` to ensure it is up-to-date (**Hint** - you may not have all changes that have been
       merged into `main`).
 - [ ] Copy and paste the example to the docstring of the `divide()` function that shows the consequence of trying to
@@ -26,14 +26,14 @@ You have now used `git commit --amend`, lets try `git commit --fixup`.
 - [ ] Perform an interactive rebase to automatically squash the changes.
 - [ ] Remove the empty commit and push your changes.
 - [ ] Make a pull request and once approved merge.
-- [ ] Delete your local `zero-division-amend-fixup` branch
+- [ ] Delete your local `<github_user>/<issue_number>-zero-division-amend-fixup` branch
 
-## Checkout the `zero-division-amend-fixup` branch
+## Checkout the `<github_user>/<issue_number>-zero-division-amend-fixup` branch
 
 This branch doesn't exist so needs creating.
 
 ```bash
-git switch -c zero-division-amend-fixup
+git switch -c <github_user>/<issue_number>-zero-division-amend-fixup
 ```
 
 ## Rebase the branch onto `main`
@@ -111,11 +111,11 @@ git commit --fixup HEAD~1
 ## Perform an interactive rebase to automatically squash the changes
 
 You will either need the hash of the commit _before_ the one you are fixing up (use `git logp` to find this) or
-you can use `HEAD~3` (the fixup itself is currently a commit and so you have to go back an extra commit relative to
+you can use `HEAD~4` (the fixup itself is currently a commit and so you have to go back an extra commit relative to
 `HEAD`).
 
 ```bash
-git rebase -i --autosquash HEAD~3
+git rebase -i --autosquash HEAD~4
 ```
 
 A text editor should open and the commit with the message staring `fixup!` should have `fixup` and not `pick` next to
@@ -124,7 +124,7 @@ case use `Ctrl + o` followed by `Ctrl + x`).
 
 ## Remove the empty commit and push your changes
 
-We can remove the empty commit and push our changes.
+We can remove the empty commit with `git reset HEAD~1` and push your changes.
 
 ```bash
 git reset HEAD~1
@@ -133,15 +133,20 @@ git push
 
 ## Make a pull request and once approved merge
 
-Go to GitHub and make a pull request to merge you changes in, assigning it to you have teamed up with for this
-exercise. Once approved merge the pull request to main.
+Go to GitHub and make a pull request to merge you changes in, assigning it your collaborator.
 
-## Delete your local `zero-division-amend-fixup` branch
+Remember you can use the [GitHub
+Keywords](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
+to automatically close the related issue.
+
+Once approved merge the pull request to `main`.
+
+## Delete your local `<github_user>/<issue_number>-zero-division-amend-fixup` branch
 
 We can now switch to `main`, pull down the merged changes and delete the local copy of the `zero-division-amend-fixup`
 
 ```bash
 git switch main
 git pull
-git branch -d zero-division-amend-fixup
+git branch -d ns-rse/5-zero-division-amend-fixup
 ```

@@ -21,7 +21,11 @@ mouse over it.
 ### Create Branch
 
 Create a branch locally from the `main` branch to work on this task. Try using the suggested nomenclature of
-`<github_username>/<issue_number>-<short_description>`.
+`<github_username>/<issue_number>-<short_description>`, e.g.
+
+```bash
+git switch -c "ns-rse/1-zero-division"
+```
 
 ### Add a `try: ... except: ...` to capture `ZeroDivisionError`
 
@@ -71,15 +75,25 @@ following will create a tracking branch upstream and push to it all in one go.
 step.
 
 ```bash
-git push --set-upstream origin <local_branch_name>
+git push
 ```
 
 ### Create a Pull Request
 
 Navigate to your repository and create a Pull Request, adding your collaborator as a reviewer.
 
+Remember you can use the [GitHub
+Keywords](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
+to automatically close the related issue.
+
 Address any feedback or errors that arise in the GitHub Actions.
 
 ### Merge the Pull Request
 
-Once approved merge the pull request.
+Once approved merge the pull request and delete your local branch.
+
+```bash
+git switch main
+git pull
+git branch -d ns-rse/1-zero-division
+```
