@@ -21,14 +21,18 @@ mouse over it.
 ### Create Branch
 
 Create a branch locally from the `main` branch to work on this task. Try using the suggested nomenclature of
-`<github_username>/<issue_number>-<short_description>`.
+`<github_username>/<issue_number>-<short_description>`, e.g.
+
+```bash
+git switch -c "ns-rse/2-square-root"
+```
 
 ### Add a `square_root()` function to the `pythonmaths/arithmetic.py` module
 
 Add the following to the bottom `pythoncalculator/arithmetic.py`.
 
 ```python
-def square_root(x):
+def square_root(x: int | float) -> float:
     """Return the square root of a number.
 
     Parameters
@@ -54,28 +58,28 @@ def square_root(x):
 
 ### Add a test to check the exception is raised
 
-Add the following to the `tests/test_arithmetic.py` which checks the correct values are returned that the exception is raised.
+Add the following to the `tests/test_arithmetic.py` which checks the correct values are returned.
 
 ```python
 @pytest.mark.parametrize(
     ("x", "target"),
     [
-        pytest.mark(4, 2, id="square root of 4"),
-        pytest.mark(9, 3.0, id="square root of 9"),
-        pytest.mark(25, 5.0, id="square root of 25"),
-        pytest.mark(2, 1.4142135623730951, id="square root of 2"),
+        pytest.param(4, 2, id="square root of 4"),
+        pytest.param(9, 3.0, id="square root of 9"),
+        pytest.param(25, 5.0, id="square root of 25"),
+        pytest.param(2, 1.4142135623730951, id="square root of 2"),
     ],
 )
 def test_square_root(x: int | float, target: int | float) -> None:
     """Test the square_root() function."""
-    assert pytest.approx(arithmetic.square_root(x), target)
+    pytest.approx(arithmetic.square_root(x), target)
 ```
 
 ### Save, stage, commit your changes
 
 ```bash
 git add -u    # This will add all files that are under version control and have been modified
-git commit -m "Adds square_root() function and tests."
+git commit -m "feature: Adds square_root() function and tests."
 ```
 
 ### Push to `origin`
@@ -87,9 +91,16 @@ following will create a tracking branch upstream and push to it all in one go.
 step.
 
 ```bash
-git push --set-upstream origin <local_branch_name>
+git push
 ```
 
-### Do **not** create a pull request
+### Create a Pull Request
 
-Please do **not** create a pull request yet.
+Navigate to your repository and create a Pull Request, adding your collaborator as a reviewer.
+
+Remember you can use the [GitHub
+Keywords](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
+to automatically close the related issue.
+
+**NB** Please do **NOT** merge this pull request, we will be using this branch in its current state later on to
+understand `git rebase`.
