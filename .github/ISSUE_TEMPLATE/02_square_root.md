@@ -79,7 +79,7 @@ def test_square_root(x: int | float, target: int | float) -> None:
 
 ```bash
 git add -u    # This will add all files that are under version control and have been modified
-git commit -m "Adds square_root() function and tests."
+git commit -m "feature: Adds square_root() function and tests."
 ```
 
 ### Push to `origin`
