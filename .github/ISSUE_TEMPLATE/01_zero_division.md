@@ -32,18 +32,18 @@ git switch -c "ns-rse/1-zero-division"
 Replace line 55 in the `pythonmaths/arithmetic.py` file which currently reads.
 
 ```python
-    return x / y
+return x / y
 ```
 
 With the following code which raises a custom exception message.
 
 ```python
-    try:
-        return x / y
-    except ZeroDivisionError as e:
-        raise ZeroDivisionError(
-            "You can not divide by 0, please choose another value for 'y'."
-        ) from e
+try:
+    return x / y
+except ZeroDivisionError as e:
+    raise ZeroDivisionError(
+        "You can not divide by 0, please choose another value for 'y'."
+    ) from e
 ```
 
 ### Add a test to check the exception is raised
