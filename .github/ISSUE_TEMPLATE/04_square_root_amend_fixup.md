@@ -11,7 +11,7 @@ been covered in the lesson so try and use what you have learnt. The commands are
 
 - [ ] Create and switch to the `<github-user>/<issue-number>-square-root-amend-fixup` branch.
 - [ ] Rebase the branch onto `main` to ensure it is up-to-date (**Hint** - you may not have all changes that have been
-      merged into `main`).
+      merged into `main` so use previous experience to `git rebase`).
 - [ ] Copy and paste the example to the docstring of the `square_root()` function that shows the consequence of trying to
       divide by zero.
 - [ ] Commit your changes with an appropriate error message.

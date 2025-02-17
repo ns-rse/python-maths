@@ -29,7 +29,7 @@ git switch -c "ns-rse/1-zero-division"
 
 ### Add a `try: ... except: ...` to capture `ZeroDivisionError`
 
-Replace line 55 in the `pythoncalculator/arithmetic.py` which currently reads.
+Replace line 55 in the `pythonmaths/arithmetic.py` file which currently reads.
 
 ```python
     return x / y

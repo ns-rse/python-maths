@@ -29,7 +29,7 @@ git switch -c "ns-rse/2-square-root"
 
 ### Add a `square_root()` function to the `pythonmaths/arithmetic.py` module
 
-Add the following to the bottom `pythoncalculator/arithmetic.py`.
+Add the following to the bottom `pythonmaths/arithmetic.py`.
 
 ```python
 def square_root(x: int | float) -> float:
