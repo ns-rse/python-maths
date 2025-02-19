@@ -13,7 +13,6 @@ Read through the instructions below then use the checklist to tick off the sub-t
 - [ ] Add a test that checks the function works correctly.
 - [ ] Save, stage, commit, and push your changes.
 
-
 ## Instructions
 
 **NB** Code chunks below can be copied using the button that appears on the top right of the code box when you move the
@@ -73,7 +72,7 @@ Add the following to the `tests/test_arithmetic.py` which checks the correct val
 )
 def test_square_root(x: int | float, target: int | float) -> None:
     """Test the square_root() function."""
-    pytest.approx(arithmetic.square_root(x), target)
+    assert arithmetic.square_root(x) == pytest.approx(target)
 ```
 
 ### Save, stage, commit your changes
