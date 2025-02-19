@@ -13,7 +13,6 @@ Read through the instructions below then use the checklist to tick off the sub-t
 - [ ] Add a test that checks this exception is raised when the function is passed `0` as denominator.
 - [ ] Save, stage, commit, and push your changes.
 
-
 ## Instructions
 
 **NB** Code chunks below can be copied using the button that appears on the top right of the code box when you move the
