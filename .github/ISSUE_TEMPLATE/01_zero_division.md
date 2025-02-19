@@ -6,17 +6,18 @@ labels: enhancement, help wanted
 assignees: ""
 ---
 
-Use the checklist to tick off the sub-tasks as you complete them.
+Read through the instructions below then use the checklist to tick off the sub-tasks as you complete them.
 
 - [ ] Create a branch that reflects your GitHub username, the issue number and the issue being addressed.
 - [ ] Add a `try: ... except: ...` to the `divide function` in the `pythonmaths/arithmetic.py` module.
 - [ ] Add a test that checks this exception is raised when the function is passed `0` as denominator.
 - [ ] Save, stage, commit, and push your changes.
 
-**NB** Code chunks below can be copied using the button that appears on the top right of the code box when you move the
-mouse over it.
 
 ## Instructions
+
+**NB** Code chunks below can be copied using the button that appears on the top right of the code box when you move the
+mouse over it.
 
 ### Create Branch
 
@@ -29,21 +30,21 @@ git switch -c "ns-rse/1-zero-division"
 
 ### Add a `try: ... except: ...` to capture `ZeroDivisionError`
 
-Replace line 55 in the `pythoncalculator/arithmetic.py` which currently reads.
+Replace line 55 in the `pythonmaths/arithmetic.py` file which currently reads.
 
 ```python
-    return x / y
+return x / y
 ```
 
 With the following code which raises a custom exception message.
 
 ```python
-    try:
-        return x / y
-    except ZeroDivisionError as e:
-        raise ZeroDivisionError(
-            "You can not divide by 0, please choose another value for 'y'."
-        ) from e
+try:
+    return x / y
+except ZeroDivisionError as e:
+    raise ZeroDivisionError(
+        "You can not divide by 0, please choose another value for 'y'."
+    ) from e
 ```
 
 ### Add a test to check the exception is raised
