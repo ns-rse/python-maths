@@ -1,5 +1,5 @@
 ---
-name: 02 - Add Square Root Function
+name: 04 - Add Square Root Function
 about: Instructions on adding a Square Root function to the Arithmetic module
 title: "Add a square root function and test"
 labels: enhancement, help wanted

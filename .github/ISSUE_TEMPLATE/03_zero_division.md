@@ -1,5 +1,5 @@
 ---
-name: 01 - Add Zero Division Exception
+name: 03 - Add Zero Division Exception
 about: Instructions on adding a Zero Division exception to the divide function
 title: "Add zero division exception and test"
 labels: enhancement, help wanted
