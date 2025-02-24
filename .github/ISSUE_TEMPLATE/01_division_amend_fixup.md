@@ -1,6 +1,6 @@
 ---
-name: 03 - Zero Division - Amend and Fixup
-about: Instructions on amending and fixup the Zero Division branch.
+name: 01 - Zero Division - Amend and Fixup
+about: Instructions on amending and fixup the Zero Division function.
 title: "Zero Division Amend and Fixup"
 labels: enhancement, help wanted
 assignees: ""

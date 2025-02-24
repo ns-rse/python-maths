@@ -1,6 +1,6 @@
 ---
-name: 04 - Square Root - Amend and Fixup
-about: Instructions on amending and fixup the Zero Division branch.
+name: 02 - Square Root - Amend and Fixup
+about: Instructions on amending and fixup the Square Root functions.
 title: "Square Root Amend and Fixup"
 labels: enhancement, help wanted
 assignees: ""
