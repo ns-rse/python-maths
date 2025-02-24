@@ -16,14 +16,6 @@ def add(x: int | float, y: int | float) -> float:
     -------
     float
         The sum of `x` and `y`.
-
-    Examples
-    --------
-    >>> from python_math import arithmetic
-    >>> arithmetic.add(4, 5)
-      9
-    >>> arithmetic.add(1.45, 1.89)
-      3.34
     """
     return x + y
 
