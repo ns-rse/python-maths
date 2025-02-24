@@ -89,13 +89,5 @@ def subtract(x: int | float, y: int | float) -> float:
     -------
     float
         The result of subtracting `y` from `x`.
-
-    Examples
-    --------
-    >>> from python_math import arithmetic
-    >>> arithmetic.subtract(10, 2)
-        8.0
-    >>> arithmetic.subtract(5, 2.5)
-        2.5
     """
     return x - y
