@@ -1,19 +1,18 @@
 ---
-name: 01 - Zero Division - Amend and Fixup
-about: Instructions on amending and fixup the Zero Division function.
-title: "Zero Division Amend and Fixup"
+name: 02 - Subtract - Amend and Fixup
+about: Instructions on amending and fixup the subtract functions.
+title: "Subtract Amend and Fixup"
 labels: enhancement, help wanted
 assignees: ""
 ---
 
-Read through the instructions below then use the checklist to tick off the sub-tasks as you complete them. Some of the
-tasks rely on material that has already been covered in the lesson so try and use what you have learnt. The commands are
-provided if required though.
+Use the checklist to tick off the sub-tasks as you complete them. Some of the tasks rely on material that has already
+been covered in the lesson so try and use what you have learnt. The commands are provided if required though.
 
-- [ ] Create the `<github_user>/<issue_number>-zero-division-amend-fixup` branch.
+- [ ] Create and switch to the `<github-user>/<issue-number>-subtract-amend-fixup` branch.
 - [ ] Rebase the branch onto `main` to ensure it is up-to-date (**Hint** - you may not have all changes that have been
       merged into `main` so use previous experience to `git rebase`).
-- [ ] Copy and paste the example to the docstring of the `divide()` function that shows the consequence of trying to
+- [ ] Copy and paste the example to the docstring of the `subtract()` function that shows the consequence of trying to
       divide by zero.
 - [ ] Commit your changes with an appropriate error message.
 - [ ] Correct the spelling error
@@ -22,53 +21,63 @@ provided if required though.
 You have now used `git commit --amend`, lets try `git commit --fixup`.
 
 - [ ] Make an empty commit.
-- [ ] Add another example to the `divide()` function's example section.
+- [ ] Add another example to the `square_root()` function's example section.
 - [ ] Commit the change as a fixup to the commit which added the first example.
 - [ ] Perform an interactive rebase to automatically squash the changes.
 - [ ] Remove the empty commit and push your changes.
 - [ ] Make a pull request and once approved merge.
-- [ ] Delete your local `<github_user>/<issue_number>-zero-division-amend-fixup` branch
+- [ ] Delete your local `<github-user>/<issue-number>-subtract-amend-fixup` branch
 
 ## Instructions
 
 **NB** Code chunks below can be copied using the button that appears on the top right of the code box when you move the
 mouse over it.
 
-### Create the `<github_user>/<issue_number>-zero-division-amend-fixup` branch
+### Create the `<github-user>/<issue-number>-subtract-amend-fixup` branch
 
 This branch doesn't exist so needs creating, make sure `main` is up-to-date before creating it.
 
 ```bash
 git switch main
 git pull
-git switch -c <github_user>/<issue_number>-zero-division-amend-fixup
+git switch -c <github_user>/<issue_number>-subtract-amend-fixup
 ```
 
-### Add example of zero division to docstring
+### Add a warning about square roots of negative numbers
 
-Copy and paste the following into the `Examples` section of the `divide()` function in the `pythonmaths/arithmetic.py`
-file. Note it deliberately contains a spelling error as we will be fixing them. Make sure the code is correctly indented.
+Currently the `arithmetic.subtract()` function doesn't have any examples in the "docstring" (the help for the function
+that is within the `"""` markers).
+
+Copy and paste the following into docstring of the `subtract()` function. This is _after_ the `Returns` section. Make
+sure to include a blank row after the description of `Returns` section of the `subtract()`function in
+the`pythonmaths/arithmetic.py` file. Note it deliberately contains a spelling error as we will be fixing them. Make sure
+the code is correctly indented.
 
 ```bash
-    >>> arithmetic.divide(3, 0)
-        You can not divide by 0, please chose another value for 'y'.
+
+    Examples
+    --------
+    >>> from python_math import arithmatic
+    >>> arithmetic.subtract(10, 2)
+        8.0
+    >>> arithmetic.subtract(5, 2.5)
+        2.5
 ```
 
 ### Commit your changes
 
 ```bash
 git add -u
-git commit -m "docs: Adding zero division example to divide docstring"
+git commit -m "feature: Adds examples to subtract() function docstring"
 ```
 
 ### Correct the spelling error
 
-Did you spot it? The example above had `chose` instead of `choose` which is the actual error message returned. Correct
-this in the docstring so it reads as shown below.
+Did you spot it? The example above had `artihmatic` instead of `arithmetic` in the import line. Correct this in the
+docstring so it reads as shown below.
 
-```bash
-    >>> arithmetic.divide(3, 0)
-        You can not divide by 0, please choose another value for 'y'.
+```python
+    >>> from python_math import arithmetic
 ```
 
 ### Amend the previous commit
@@ -86,13 +95,11 @@ git commit --amend
 git commit --allow-empty -m "Empty commit to try out fixup"
 ```
 
-### Add another example to the `divide()` function's example section
-
-Add another example to the `Examples` section of the `divide()` function in the `pythonmaths/arithmetic.py` file.
+### Add another example to the `square_root()` function's example section
 
 ```bash
-    >>> arithmetic.divide(1, 0.1)
-        10
+    >>> arithmetic.subtract(-7.1, -1.2)
+        -5.9
 ```
 
 ### Commit the change as a fixup
@@ -108,11 +115,11 @@ git commit --fixup HEAD~1
 ### Perform an interactive rebase to automatically squash the changes
 
 You will either need the hash of the commit _before_ the one you are fixing up (use `git logp` to find this) or
-you can use `HEAD~4` (the fixup itself is currently a commit and so you have to go back an extra commit relative to
+you can use `HEAD~3` (the fixup itself is currently a commit and so you have to go back an extra commit relative to
 `HEAD`).
 
 ```bash
-git rebase -i --autosquash HEAD~4
+git rebase -i --autosquash HEAD~3
 ```
 
 A text editor should open and the commit with the message staring `fixup!` should have `fixup` and not `pick` next to
@@ -121,7 +128,7 @@ case use `Ctrl + o` followed by `Ctrl + x`).
 
 ### Remove the empty commit and push your changes
 
-We can remove the empty commit with `git reset HEAD~1` and push your changes.
+We can remove the empty commit with `git reset HEAD~1` and push our changes.
 
 ```bash
 git reset HEAD~1
@@ -138,12 +145,12 @@ to automatically close the related issue.
 
 Once approved merge the pull request to `main`.
 
-### Delete your local `<github_user>/<issue_number>-zero-division-amend-fixup` branch
+### Delete your local `<github-user>/<issue-number>-subtract-amend-fixup` branch
 
 We can now switch to `main`, pull down the merged changes and delete the local copy of the branch you created.
 
 ```bash
 git switch main
 git pull
-git branch -d <github-user>/<issue-number>-zero-division-amend-fixup
+git branch -d <github-user>/<issue-number>-subtract-amend-fixup
 ```

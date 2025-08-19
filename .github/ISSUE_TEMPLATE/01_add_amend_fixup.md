@@ -1,18 +1,19 @@
 ---
-name: 02 - Square Root - Amend and Fixup
-about: Instructions on amending and fixup the Square Root functions.
-title: "Square Root Amend and Fixup"
+name: 01 - Add - Amend and Fixup
+about: Instructions on adding an Example to the add() function docstring.
+title: "Add Amend and Fixup"
 labels: enhancement, help wanted
 assignees: ""
 ---
 
-Use the checklist to tick off the sub-tasks as you complete them. Some of the tasks rely on material that has already
-been covered in the lesson so try and use what you have learnt. The commands are provided if required though.
+Read through the instructions below then use the checklist to tick off the sub-tasks as you complete them. Some of the
+tasks rely on material that has already been covered in the lesson so try and use what you have learnt. The commands are
+provided if required though.
 
-- [ ] Create and switch to the `<github-user>/<issue-number>-square-root-amend-fixup` branch.
+- [ ] Create the `<github_user>/<issue_number>-add-amend-fixup` branch.
 - [ ] Rebase the branch onto `main` to ensure it is up-to-date (**Hint** - you may not have all changes that have been
       merged into `main` so use previous experience to `git rebase`).
-- [ ] Copy and paste the example to the docstring of the `square_root()` function that shows the consequence of trying to
+- [ ] Copy and paste the example to the docstring of the `add()` function that shows the consequence of trying to
       divide by zero.
 - [ ] Commit your changes with an appropriate error message.
 - [ ] Correct the spelling error
@@ -21,62 +22,62 @@ been covered in the lesson so try and use what you have learnt. The commands are
 You have now used `git commit --amend`, lets try `git commit --fixup`.
 
 - [ ] Make an empty commit.
-- [ ] Add another example to the `square_root()` function's example section.
+- [ ] Add another example to the `divide()` function's example section.
 - [ ] Commit the change as a fixup to the commit which added the first example.
 - [ ] Perform an interactive rebase to automatically squash the changes.
 - [ ] Remove the empty commit and push your changes.
 - [ ] Make a pull request and once approved merge.
-- [ ] Delete your local `<github-user>/<issue-number>-square-root-amend-fixup` branch
+- [ ] Delete your local `<github_user>/<issue_number>-add-amend-fixup` branch
 
 ## Instructions
 
 **NB** Code chunks below can be copied using the button that appears on the top right of the code box when you move the
 mouse over it.
 
-### Checkout the `<github-user>/<issue-number>-square-root-amend-fixup` branch
+### Create the `<github_user>/<issue_number>-add-amend-fixup` branch
 
 This branch doesn't exist so needs creating, make sure `main` is up-to-date before creating it.
 
 ```bash
 git switch main
 git pull
-git switch -c <github_user>/<issue_number>-zero-division-amend-fixup
+git switch -c <github_user>/<issue_number>-add-amend-fixup
 ```
 
-### Add a warning about square roots of negative numbers
+### Add an example section to the `add()` function
 
-Currently the `arithmetic.square_root()` function has a problem, it returns the square root of negative numbers.
+Currently the `arithmetic.add()` function doesn't have any examples in the "docstring" (the help for the function
+that is within the `"""` markers).
+
+Copy and paste the following into docstring of the `add()` function. This is _after_ the `Returns` section. Make sure to
+include a blank row after the description of `Returns` section of the `add()`function in the`pythonmaths/arithmetic.py`
+file. Note it deliberately contains a spelling error as we will be fixing them. Make sure the code is correctly indented.
 
 ```bash
-from pythonmaths import arithmetic
-arithmetic.square_root(-2)
--1.4142135623730951
-```
 
-Obviously this is wrong as square roots of negative numbers should be complex.
-
-We can improve the function by changing it to the following.
-
-```python
-if x < 0:
-    print("WARNING : you have supplied a negative number, the square roof is complex.")
-return x ** (1 / 2)
+    Examples
+    --------
+    >>> from python_math import arithmatic
+    >>> arithmetic.add(4, 5)
+      9
+    >>> arithmetic.add(1.45, 1.89)
+      3.34
 ```
 
 ### Commit your changes
 
 ```bash
 git add -u
-git commit -m "feature: Adds warning to square_root() if number is negative"
+git commit -m "docs: Adding examples to add() docstring"
 ```
 
 ### Correct the spelling error
 
-Did you spot it? The example above had `roof` instead of `root`. Correct this in the docstring so it reads as shown
-below.
+Did you spot it? The example above had `arithmatic` instead of `arithmetic` in the import line. Correct this in the
+docstring so it reads as shown below.
 
-```python
-print("WARNING : you have supplied a negative number, the square roof is complex.")
+```bash
+    >>> from python_math import arithmetic
 ```
 
 ### Amend the previous commit
@@ -94,12 +95,13 @@ git commit --amend
 git commit --allow-empty -m "Empty commit to try out fixup"
 ```
 
-### Add another example to the `square_root()` function's example section
+### Add another example to the `add()` function's example section
+
+Add another example to the `Examples` section of the `add()` function in the `pythonmaths/arithmetic.py` file.
 
 ```bash
-    >>> arithmetic.square_root(-2)
-        WARNING : you have supplied a negative number, the square roof is complex.
-        (8.659560562354934e-17+1.4142135623730951j)
+    >>> arithmetic.add(1, 0.1)
+        10.1
 ```
 
 ### Commit the change as a fixup
@@ -114,12 +116,12 @@ git commit --fixup HEAD~1
 
 ### Perform an interactive rebase to automatically squash the changes
 
-You will either need the hash of the commit _before_ the one you are fixing up (use `git logp` to find this) or
-you can use `HEAD~3` (the fixup itself is currently a commit and so you have to go back an extra commit relative to
+You will either need the hash of the commit _before_ the one you are fixing up (use `git log` to find this) or
+you can use `HEAD~2` (the fixup itself is currently a commit and so you have to go back an extra commit relative to
 `HEAD`).
 
 ```bash
-git rebase -i --autosquash HEAD~4
+git rebase -i --autosquash HEAD~3
 ```
 
 A text editor should open and the commit with the message staring `fixup!` should have `fixup` and not `pick` next to
@@ -128,7 +130,7 @@ case use `Ctrl + o` followed by `Ctrl + x`).
 
 ### Remove the empty commit and push your changes
 
-We can remove the empty commit with `git reset HEAD~1` and push our changes.
+We can remove the empty commit with `git reset HEAD~1` and push your changes.
 
 ```bash
 git reset HEAD~1
@@ -145,12 +147,12 @@ to automatically close the related issue.
 
 Once approved merge the pull request to `main`.
 
-### Delete your local `<github-user>/<issue-number>-square-root-amend-fixup` branch
+### Delete your local `<github_user>/<issue_number>-add-amend-fixup` branch
 
 We can now switch to `main`, pull down the merged changes and delete the local copy of the branch you created.
 
 ```bash
 git switch main
 git pull
-git branch -d <github-user>/<issue-number>-square-root-amend-fixup
+git branch -d <github-user>/<issue-number>-add-amend-fixup
 ```
